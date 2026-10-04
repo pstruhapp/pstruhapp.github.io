@@ -17,5 +17,5 @@ jobs:
       - run: |
           git config user.name "Pstruh bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b staging-ryby2
-          git add staging && git commit -m "Blochovy tabule" && git push -f origin staging-ryby2
+          git checkout -b staging-ryby3
+          git add staging && git commit -m "Blochovy tabule" && git push -f origin staging-ryby3

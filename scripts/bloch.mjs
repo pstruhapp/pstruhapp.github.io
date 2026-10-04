@@ -17,9 +17,12 @@ for (let i = 0; i < titles.length; i += 20) {
   for (const p of Object.values(j.query.pages)) {
     if (!p.imageinfo) continue; const ii = p.imageinfo[0];
     const m = p.title.match(/\(Pl\. ([IVXLC]+)\)/); const name = m ? "pl-" + m[1] + (/white/.test(p.title) ? "-w" : "") : p.title.replace(/^File:/, "").replace(/\.[a-z]+$/i, "").replace(/[^A-Za-z0-9]+/g, "-").slice(0, 60);
-    const r = await fetch(ii.thumburl, { headers: UA }); writeFileSync(`staging/bloch/${name}.jpg`, Buffer.from(await r.arrayBuffer()));
+    let buf = null;
+    for (let t = 0; t < 6 && !buf; t++) { const r = await fetch(ii.thumburl, { headers: UA }); if (r.ok && /image/.test(r.headers.get("content-type") || "")) buf = Buffer.from(await r.arrayBuffer()); else await new Promise((q) => setTimeout(q, 4000 * (t + 1))); }
+    if (!buf) { console.log("FAIL", p.title); continue; }
+    writeFileSync(`staging/bloch/${name}.jpg`, buf);
     meta[name] = { title: p.title, url: ii.descriptionurl, autor: (ii.extmetadata?.Artist?.value || "").replace(/<[^>]+>/g, "").trim(), licence: ii.extmetadata?.LicenseShortName?.value || "" };
-    await new Promise((r) => setTimeout(r, 200));
+    await new Promise((r) => setTimeout(r, 1500));
   }
 }
 writeFileSync("staging/bloch/meta.json", JSON.stringify(meta, null, 1));
