@@ -10,3 +10,4 @@ for (const n of names) {
   await new Promise((q) => setTimeout(q, 600));
 }
 mkdirSync("staging", { recursive: true }); writeFileSync("staging/domeny.txt", out.join("\n"));
+// znovu spuštěno
