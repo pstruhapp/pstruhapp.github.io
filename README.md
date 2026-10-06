@@ -3,7 +3,7 @@
 Webová aplikace pro rybáře: nejbližší rybářské revíry ČRS podle polohy, podmínky lovu z RIS Portálu,
 průtoky pstruhových toků z ČHMÚ, zarybnění a pstruhové aktuality.
 
-**Stránka:** https://pstruhapp.github.io
+**Stránka:** https://pstruh.iryba.cz
 
 ## Jak to funguje
 - `index.html` – celá aplikace (mapa OpenStreetMap přes Leaflet).
