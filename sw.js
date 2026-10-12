@@ -1,5 +1,5 @@
 // Pstruh: jednoduchá offline záloha. Vždy zkouší síť, při výpadku použije poslední uloženou verzi.
-const CACHE = "pstruh-v42";
+const CACHE = "pstruh-v43";
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (e) => e.waitUntil(self.clients.claim()));
 self.addEventListener("fetch", (e) => {
