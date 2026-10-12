@@ -1354,7 +1354,7 @@ function naRing(items,mid){
 const naPc=v=>v>=65?"var(--ok)":v>=40?"var(--accent)":"var(--muted)";
 function naRose(list){ const best=list[0];
   return naRing(list.map(l=>({top:l.sn,val:`${l.v}&nbsp;%`,vc:naPc(l.v),hex:NA_C[l.c[0]][0],op:(0.3+0.7*l.v/100).toFixed(2)})),
-    `<div class="nadots">${naDots(best.c,30)}</div><div class="naname">${esc(NA_T?.typy?.[best.id]?.n||best.sn)}</div><div class="rpct" style="font-size:30px">${best.v}&nbsp;%</div><div class="rlbl" style="color:${naPc(best.v)}">hodí se dnes nejvíc</div>`); }
+    `<svg viewBox="0 0 120 64" aria-hidden="true" style="width:72px;height:38px"><path d="M6 32 L-8 16 L-4 32 L-8 48 Z" transform="translate(14 0)" fill="${naPc(best.v)}"/><path d="M18 32 C34 8, 86 6, 112 30 C108 36, 104 40, 98 44 C78 58, 36 56, 18 32 Z" fill="${naPc(best.v)}"/><path d="M54 14 C60 4, 74 4, 80 12" fill="none" stroke="${naPc(best.v)}" stroke-width="5" stroke-linecap="round"/><circle cx="96" cy="27" r="4" fill="#fff"/></svg><div class="naname">${esc(NA_T?.typy?.[best.id]?.n||best.sn)}</div><div class="rpct" style="font-size:30px">${best.v}&nbsp;%</div><div class="rlbl" style="color:${naPc(best.v)}">hodí se dnes nejvíc</div>`); }
 function naFactors(m,c,best){
   const sky={jasno:"jasno",polojasno:"polojasno",zatazeno:"zataženo",prsi:"prší"}[c.sky];
   const vt=(c.q==null?"":{nizka:"nízká",bezna:"běžná",zvysena:"zvýšená",vysoka:"vysoká"}[c.voda]+", ")+{cira:"čirá",mirne:"mírně kalná",kalna:"kalná"}[c.cir];
