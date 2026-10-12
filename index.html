@@ -1233,6 +1233,7 @@ async function chanceDetail(x){ const box=$("chDetail"); if(!box) return; box.in
 
 /* ---------- Nástrahy dnes (pstruhové revíry; zatím skryté – zapne se adresou s #nastrahy) ---------- */
 const NA_ON=(()=>{ const h=location.hash||""; try{ if(/nastrahy-off/.test(h)) localStorage.removeItem("nastrahy"); else if(/nastrahy/.test(h)) localStorage.setItem("nastrahy","1"); return localStorage.getItem("nastrahy")==="1"; }catch(e){ return /nastrahy/.test(h)&&!/off/.test(h); } })();
+const NA_SHOPS=false; /* odkazy na obchody skryté, dokud nebude spolupráce domluvena */
 const NA_C={zl:["#D9A520","zlatá"],mi:["#C46A2A","měděná"],st:["#9AA6B1","stříbrná"],ol:["#6B7A3A","olivová"],hn:["#7A5232","hnědá"],ce:["#2A2A2A","černá"],or:["#F26B1D","oranžová"],rz:["#E8508A","růžová"],sv:["#CFC7B0","světlá"]};
 function naCtx(w,fl,p){
   const now=new Date(), mon=now.getMonth()+1, nm=now.getHours()*60+now.getMinutes();
@@ -1399,7 +1400,7 @@ function naCard(title,m,c,w){
       <div class="napick">${naDots(l.c,24)}<div><b>${esc(T(l.id).n||l.sn)}</b> <span class="napct">${l.v} %</span><div class="hint">${esc(naColTxt(l.c))}${T(l.id).vel?" · "+esc(T(l.id).vel):""}</div></div></div>
       <p class="nahow"><b>Jak:</b> ${esc(l.jak)}<br><b>Proč:</b> ${esc(l.proc(c))}</p>
       ${a?`<p class="hint naalt">Nebere? Zkus: ${esc(T(a.id).n||a.sn)} (${esc(naColTxt(a.c))}).</p>`:""}
-      ${shop(l.id)?`<p class="hint naalt">Kde koupit: ${shop(l.id)}</p>`:""}</div>`; }).join("")}</article>`;
+      ${NA_SHOPS&&shop(l.id)?`<p class="hint naalt">Kde koupit: ${shop(l.id)}</p>`:""}</div>`; }).join("")}</article>`;
 }
 async function nastrahyDetail(x,p){ const box=$("naDetail"); if(!box) return;
   const r=x.r; if(!NA_ON||r.t!=="P"){ box.remove(); return; }
