@@ -1415,7 +1415,7 @@ async function nastrahyDetail(x,p){ const box=$("naDetail"); if(!box) return;
     let h=`<h3>Nástrahy dnes</h3>`;
     if(c.voda==="vysoka"&&c.q>3) h+=`<div class="alert">Voda je velmi vysoká (${Math.round(c.q*100)} % běžného průtoku) – dnes raději nejezdit.</div>`;
     if(c.fly) h+=naCard("Muškaření","fly",c,why);
-    if(c.spin) h+=naCard("Přívlač","spin",c,why);
+    if(c.spin){ h+=naCard("Přívlač","spin",c,why); if(c.mon>=9&&c.mon<=11) h+=`<div class="alert">Od 1. 9. do 30. 11. smí mít nástraha při přívlači v pstruhovém revíru jen jeden jednoháček – trojháček na rotačce nebo wobleru vyměň.</div>`; }
     if(!c.fly&&!c.spin) h+=`<p class="hint">Na tomto revíru není povoleno muškaření ani přívlač.</p>`;
     h+=`<p class="hint" style="margin-top:8px">Procenta ukazují, jak dobře se nástraha hodí k dnešní vodě, světlu, počasí a sezóně. Je to odhad, ne statistika úlovků. Povolené nástrahy a způsoby lovu vždy podle podmínek revíru.</p>`;
     box.innerHTML=h;
