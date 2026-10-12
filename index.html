@@ -1423,7 +1423,7 @@ async function naRender(x,p){ const box=$("naDetail"); if(!box) return;
     const c=naCtx(w,fl,p), ch=chanceScore(r,w,fl,null,p);
     if(ch.closed){ box.innerHTML=`<h3>Nástrahy dnes</h3><p class="hint">Dnes se na tomto revíru nesmí lovit, rada se nezobrazuje.</p>`; return; }
     const why=naWhy(c);
-    let h=`<div class="nahead"><h3>Nástrahy dnes</h3><button class="btn small naclosebtn" type="button">Zavřít ✕</button></div>`;
+    let h=`<div class="nahead"><h3>Nástrahy dnes</h3><button class="btn small naclosebtn" type="button">Zavřít nástrahy ✕</button></div>`;
     if(c.voda==="vysoka"&&c.q>3) h+=`<div class="alert">Voda je velmi vysoká (${Math.round(c.q*100)} % běžného průtoku) – dnes raději nejezdit.</div>`;
     if(c.fly) h+=naCard("Muškaření","fly",c,why); else h+=`<p class="hint">Muškaření je na tomto revíru zakázané.</p>`;
     if(!c.spin) h+=`<p class="hint naoff"><b>Přívlač</b> je na tomto revíru zakázaná (v podmínkách revíru), proto ji tu nenabízíme.</p>`;
