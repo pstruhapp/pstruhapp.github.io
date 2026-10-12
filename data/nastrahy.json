@@ -2,59 +2,207 @@
   "aktualizovano": "2026-10-12",
   "pozn": "Katalog typů nástrah pro rady „Nástrahy dnes“. Odkazy vedou na kategorie obchodů (ne na konkrétní kusy). Kontroluje se jednou měsíčně.",
   "typy": {
-    "ceska": { "n": "Česká nymfa", "k": "nymfa", "vel": "háček 10–12, zátěž v těle nebo wolframová hlavička 3–3,5 mm",
+    "ceska": {
+      "n": "Česká nymfa",
+      "k": "nymfa",
+      "vel": "háček 10–16 – malá a lehká do mělké a čiré vody, větší a těžší do hlubokého proudu",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/ceske-nymfy" },
-        { "o": "Muška-vláčka", "u": "https://www.muska-vlacka.cz/SADY-CESKYCH-NYMF-CZECH-NYMPH-c109_415_2.htm" },
-        { "o": "Tommi-Fly", "u": "https://www.tommi-fly.cz/nymfy" } ] },
-    "perdigon": { "n": "Perdigon", "k": "nymfa", "vel": "háček 14–18, wolframová hlavička 2,5–3 mm",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/ceske-nymfy"
+        },
+        {
+          "o": "Muška-vláčka",
+          "u": "https://www.muska-vlacka.cz/SADY-CESKYCH-NYMF-CZECH-NYMPH-c109_415_2.htm"
+        },
+        {
+          "o": "Tommi-Fly",
+          "u": "https://www.tommi-fly.cz/nymfy"
+        }
+      ]
+    },
+    "perdigon": {
+      "n": "Perdigon",
+      "k": "nymfa",
+      "vel": "háček 14–18, wolframová hlavička 2,5–3 mm",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/perdigon" },
-        { "o": "Muška-vláčka", "u": "https://www.muska-vlacka.cz/NYMFY-c108_261_2.htm" } ] },
-    "jig": { "n": "Jig nymfa s hot spotem", "k": "nymfa", "vel": "háček 12–16, wolfram 2,8–3,8 mm, hrotem nahoru",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/perdigon"
+        },
+        {
+          "o": "Muška-vláčka",
+          "u": "https://www.muska-vlacka.cz/NYMFY-c108_261_2.htm"
+        }
+      ]
+    },
+    "jig": {
+      "n": "Jig nymfa s hot spotem",
+      "k": "nymfa",
+      "vel": "háček 12–16, wolfram 2,8–3,8 mm, hrotem nahoru",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/tungstenove-jigy" },
-        { "o": "Tommi-Fly", "u": "https://www.tommi-fly.cz/nymfy" } ] },
-    "posvatka": { "n": "Nymfa pošvatky", "k": "nymfa", "vel": "háček 8–10, těžká, tmavá",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/tungstenove-jigy"
+        },
+        {
+          "o": "Tommi-Fly",
+          "u": "https://www.tommi-fly.cz/nymfy"
+        }
+      ]
+    },
+    "posvatka": {
+      "n": "Nymfa pošvatky",
+      "k": "nymfa",
+      "vel": "háček 8–10, těžká, tmavá",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/nymfy-posvatek" } ] },
-    "jepicka": { "n": "Suchá jepička", "k": "sucha", "vel": "háček 14–18 (parašutka, CDC)",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/nymfy-posvatek"
+        }
+      ]
+    },
+    "jepicka": {
+      "n": "Suchá jepička",
+      "k": "sucha",
+      "vel": "háček 14–18 (parašutka, CDC)",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suche-musky/parasutky" },
-        { "o": "Muška-vláčka", "u": "https://www.muska-vlacka.cz/SUCHE-MUSKY-c108_241_2.htm" },
-        { "o": "Tommi-Fly", "u": "https://www.tommi-fly.cz/suche-musky" } ] },
-    "chrostik": { "n": "Suchý chrostík", "k": "sucha", "vel": "háček 12–14 (srnčí srst nebo CDC)",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suche-musky/parasutky"
+        },
+        {
+          "o": "Muška-vláčka",
+          "u": "https://www.muska-vlacka.cz/SUCHE-MUSKY-c108_241_2.htm"
+        },
+        {
+          "o": "Tommi-Fly",
+          "u": "https://www.tommi-fly.cz/suche-musky"
+        }
+      ]
+    },
+    "chrostik": {
+      "n": "Suchý chrostík",
+      "k": "sucha",
+      "vel": "háček 12–14 (srnčí srst nebo CDC)",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suche-musky/chrostici" },
-        { "o": "Muška-vláčka", "u": "https://www.muska-vlacka.cz/SUCHE-MUSKY-c108_241_2.htm" } ] },
-    "emerger": { "n": "Emerger (rozenec)", "k": "sucha", "vel": "háček 14–16, visí v hladině",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suche-musky/chrostici"
+        },
+        {
+          "o": "Muška-vláčka",
+          "u": "https://www.muska-vlacka.cz/SUCHE-MUSKY-c108_241_2.htm"
+        }
+      ]
+    },
+    "emerger": {
+      "n": "Emerger (rozenec)",
+      "k": "sucha",
+      "vel": "háček 14–16, visí v hladině",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/rozenci-podhladinove-musky" } ] },
-    "terest": { "n": "Mravenec / brouček", "k": "sucha", "vel": "háček 12–14, pěnový",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/rozenci-podhladinove-musky"
+        }
+      ]
+    },
+    "terest": {
+      "n": "Mravenec / brouček",
+      "k": "sucha",
+      "vel": "háček 12–14, pěnový",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suchozemsky-hmyz" } ] },
-    "streamer": { "n": "Streamer", "k": "streamer", "vel": "háček 6–10 (Woolly Bugger, zonker, jig streamer)",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suchozemsky-hmyz"
+        }
+      ]
+    },
+    "streamer": {
+      "n": "Streamer",
+      "k": "streamer",
+      "vel": "háček 6–10 (Woolly Bugger, zonker, jig streamer)",
       "odkazy": [
-        { "o": "Czech Nymph", "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/pstruhove-streamery" },
-        { "o": "Muška-vláčka", "u": "https://www.muska-vlacka.cz/STREAMERY-STREAMERS-c132_0_1.htm" },
-        { "o": "Tommi-Fly", "u": "https://www.tommi-fly.cz/streamery" } ] },
-    "rot_m": { "n": "Rotačka malá", "k": "privlac", "vel": "č. 0–1, 2–4 g",
+        {
+          "o": "Czech Nymph",
+          "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/pstruhove-streamery"
+        },
+        {
+          "o": "Muška-vláčka",
+          "u": "https://www.muska-vlacka.cz/STREAMERY-STREAMERS-c132_0_1.htm"
+        },
+        {
+          "o": "Tommi-Fly",
+          "u": "https://www.tommi-fly.cz/streamery"
+        }
+      ]
+    },
+    "rot_m": {
+      "n": "Rotačka malá",
+      "k": "privlac",
+      "vel": "č. 0–1, 2–4 g",
       "odkazy": [
-        { "o": "Moje přívlač – Mepps", "u": "https://www.mojeprivlac.cz/mepps-rotacni-trpytky/" },
-        { "o": "Moje přívlač – Blue Fox", "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/" } ] },
-    "rot_v": { "n": "Rotačka větší", "k": "privlac", "vel": "č. 2–3, 5–8 g",
+        {
+          "o": "Moje přívlač – Mepps",
+          "u": "https://www.mojeprivlac.cz/mepps-rotacni-trpytky/"
+        },
+        {
+          "o": "Moje přívlač – Blue Fox",
+          "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/"
+        }
+      ]
+    },
+    "rot_v": {
+      "n": "Rotačka větší",
+      "k": "privlac",
+      "vel": "č. 2–3, 5–8 g",
       "odkazy": [
-        { "o": "Moje přívlač – Mepps", "u": "https://www.mojeprivlac.cz/mepps-rotacni-trpytky/" },
-        { "o": "Moje přívlač – Blue Fox", "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/" } ] },
-    "plandavka": { "n": "Plandavka", "k": "privlac", "vel": "2–6 g, úzká",
+        {
+          "o": "Moje přívlač – Mepps",
+          "u": "https://www.mojeprivlac.cz/mepps-rotacni-trpytky/"
+        },
+        {
+          "o": "Moje přívlač – Blue Fox",
+          "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/"
+        }
+      ]
+    },
+    "plandavka": {
+      "n": "Plandavka",
+      "k": "privlac",
+      "vel": "2–6 g, úzká",
       "odkazy": [
-        { "o": "Moje přívlač – Mepps", "u": "https://www.mojeprivlac.cz/mepps-plandavky/" },
-        { "o": "Moje přívlač – Rapala", "u": "https://www.mojeprivlac.cz/rapala-plandavky/" } ] },
-    "wobler": { "n": "Wobler", "k": "privlac", "vel": "3–5 cm, potápivý",
+        {
+          "o": "Moje přívlač – Mepps",
+          "u": "https://www.mojeprivlac.cz/mepps-plandavky/"
+        },
+        {
+          "o": "Moje přívlač – Rapala",
+          "u": "https://www.mojeprivlac.cz/rapala-plandavky/"
+        }
+      ]
+    },
+    "wobler": {
+      "n": "Wobler",
+      "k": "privlac",
+      "vel": "3–5 cm, potápivý",
       "odkazy": [
-        { "o": "Moje přívlač", "u": "https://www.mojeprivlac.cz/woblery-na-pstruhy/" } ] },
-    "guma": { "n": "Gumová nástraha na jigu", "k": "privlac", "vel": "twister nebo nymfa 3–5 cm, hlavička 1–3 g",
+        {
+          "o": "Moje přívlač",
+          "u": "https://www.mojeprivlac.cz/woblery-na-pstruhy/"
+        }
+      ]
+    },
+    "guma": {
+      "n": "Gumová nástraha na jigu",
+      "k": "privlac",
+      "vel": "twister nebo nymfa 3–5 cm, hlavička 1–3 g",
       "odkazy": [
-        { "o": "Moje přívlač", "u": "https://www.mojeprivlac.cz/pstruh/" } ] }
+        {
+          "o": "Moje přívlač",
+          "u": "https://www.mojeprivlac.cz/pstruh/"
+        }
+      ]
+    }
   }
 }

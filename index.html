@@ -1267,11 +1267,12 @@ function naCtx(w,fl,p){
 const naSpinCol=c=>c.cir==="kalna"?["or"]:c.sero?["zl"]:c.cir==="mirne"?["zl"]:c.sky==="jasno"?["st"]:c.sky==="zatazeno"||c.sky==="prsi"?["mi"]:["st"];
 const naSpinWhy=c=>c.cir==="kalna"?" V kalné vodě je vidět hlavně výrazná oranžová nebo fluo barva.":c.sero?" Zlatá se v šeru leskne víc než stříbrná.":c.cir==="mirne"?" V mírně zakalené vodě je zlatá vidět lépe než stříbrná.":c.sky==="jasno"?" Za jasného dne se stříbrná třpytí jako malá rybka.":c.sky==="zatazeno"||c.sky==="prsi"?" Za zataženého počasí působí měděná přirozeně a je dobře vidět.":"";
 const NA_L=[
- {id:"ceska",y:c=>c.voda==="nizka"&&c.cir==="cira"?"v nízké čiré vodě je pro plaché ryby moc velká a nápadná":c.cir!=="cira"?"těžší nymfa se dostane ke dnu i v zakalené vodě":"spolehlivá volba do běžného proudu",m:"fly",sn:"Česká",kde:"U dna v proudu",
-  s:c=>50+(c.voda==="bezna"||c.voda==="zvysena"?12:0)+(c.cir!=="cira"?10:0)-(c.voda==="nizka"&&c.cir==="cira"?12:0)+(c.sea==="podzim"||c.sea==="jaro"?5:0),
+ {id:"ceska",y:c=>c.voda==="nizka"&&c.cir==="cira"?"v malé a lehké verzi funguje i v nízké čiré vodě":c.cir!=="cira"?"těžší verze se dostane ke dnu i v zakalené vodě":"spolehlivá volba do běžného proudu",m:"fly",sn:"Česká",kde:"U dna v proudu",
+  s:c=>50+(c.voda==="bezna"||c.voda==="zvysena"?12:0)+(c.cir!=="cira"?10:0)+(c.sea==="podzim"||c.sea==="jaro"?5:0),
+  sz:c=>c.voda==="nizka"||(c.cir==="cira"&&c.voda!=="zvysena"&&c.voda!=="vysoka")?"malá a lehká – háček 14–16, slabá zátěž nebo hlavička 2,5 mm":c.voda==="zvysena"||c.voda==="vysoka"||c.cir==="kalna"?"větší a těžší – háček 10–12, hlavička 3–3,5 mm":"střední – háček 12–14, zátěž podle hloubky",
   col:c=>c.cir==="kalna"?["ce","rz"]:(c.sero||c.sea==="podzim")?["ol","or"]:["ol","hn"],
-  jak:"Krátké nahození šikmo proti proudu, nymfa má cinkat o kameny. Veď ji špičkou prutu stejně rychle, jako teče voda.",
-  proc:c=>"Napodobuje larvy chrostíků a blešivce, kterých je na dně celý rok nejvíc."+(c.cir==="kalna"?" V kalné vodě zvol tmavou s výraznou hlavičkou – ryba uvidí siluetu.":c.sero?" Oranžový bod v šeru upoutá.":" V čiré vodě drž přírodní barvy.")},
+  jak:"Krátké nahození šikmo proti proudu, nymfa má jít těsně nade dnem. Veď ji špičkou prutu stejně rychle, jako teče voda. Velikost a zátěž přizpůsob hloubce a proudu – v mělké a pomalé vodě lehčí, v hlubokém proudu těžší.",
+  proc:c=>"Napodobuje larvy chrostíků a blešivce, kterých je na dně celý rok nejvíc. Váže se v mnoha velikostech, od drobných po těžké."+(c.cir==="kalna"?" V kalné vodě zvol tmavou s výraznou hlavičkou – ryba uvidí siluetu.":c.sero?" Oranžový bod v šeru upoutá.":" V čiré vodě drž přírodní barvy.")},
  {id:"perdigon",y:c=>c.cir==="kalna"?"v kalné vodě je málo vidět":c.cir==="cira"&&(c.voda==="nizka"||c.voda==="bezna")?"štíhlá a nenápadná – ideální do nízké čiré vody":"rychle klesne ke dnu i v proudu",m:"fly",sn:"Perdigon",kde:"U dna v proudu",
   s:c=>45+(c.cir==="cira"&&(c.voda==="nizka"||c.voda==="bezna")?18:0)-(c.cir==="kalna"?15:0)-(c.voda==="vysoka"?5:0),
   col:c=>c.sero?["ol","or"]:["ol","st"],
@@ -1407,7 +1408,7 @@ function naCard(title,m,c,w){
     <div><p class="nartit">Nejlepší nástrahy dnes</p>${naRose(top)}<div class="naleg"><button class="naclose" type="button" aria-label="Zavřít vysvětlení" onclick="this.parentNode.classList.add('nahid')">✕</button><button class="naopen linkbtn" type="button" onclick="this.parentNode.classList.remove('nahid')">Zobrazit vysvětlení</button><p class="hint">Proč je která nástraha v rozetě a jak vysoko:</p><div class="nalegl">${top.map(l=>`<div>${naDots([l.c[0]],16)}<span><b>${esc(NA_T?.typy?.[l.id]?.n||l.sn)} ${l.v} %</b> – ${esc(l.y(c))}</span></div>`).join("")}</div></div></div></div>
     <div class="nawhy"><b>Proč:</b> ${esc(w.txt)}${w.pos.length?`<br><b>Pomáhá:</b> ${esc(w.pos.join(", "))}.`:""}${w.neg.length?` <b>Brzdí:</b> ${esc(w.neg.join(", "))}.`:""}</div>
     ${sit.map((l,i)=>{ const a=alt(l); return `<div class="nasit"><h4>${esc(l.kde)} ${i===0?'<span class="natop">nejlepší teď</span>':""}</h4>
-      <div class="napick">${naDots(l.c,24)}<div><b>${esc(T(l.id).n||l.sn)}</b> <span class="napct">${l.v} %</span><div class="hint">${esc(naColTxt(l.c))}${T(l.id).vel?" · "+esc(T(l.id).vel):""}</div></div></div>
+      <div class="napick">${naDots(l.c,24)}<div><b>${esc(T(l.id).n||l.sn)}</b> <span class="napct">${l.v} %</span><div class="hint">${esc(naColTxt(l.c))}${(l.sz?l.sz(c):T(l.id).vel)?" · "+esc(l.sz?l.sz(c):T(l.id).vel):""}</div></div></div>
       <p class="nahow"><b>Jak:</b> ${esc(l.jak)}<br><b>Proč:</b> ${esc(l.proc(c))}</p>
       ${a?`<p class="hint naalt">Nebere? Zkus: ${esc(T(a.id).n||a.sn)} (${esc(naColTxt(a.c))}).</p>`:""}
       ${NA_SHOPS&&shop(l.id)?`<p class="hint naalt">Kde koupit: ${shop(l.id)}</p>`:""}</div>`; }).join("")}</article>`;
