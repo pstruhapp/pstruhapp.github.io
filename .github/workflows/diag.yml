@@ -1,0 +1,12 @@
+name: diag
+on: push
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          A=https://ris.rybsvaz.cz/proxy/api/public
+          curl -s "$A/reviry/by-friendly-url/443020-jizera-10" > r.json; echo REVIR; cat r.json; echo
+          SID=$(python3 -c "import json;print(json.load(open('r.json')).get('sid',''))"); echo SID=$SID
+          echo PODMINKY; curl -s "$A/reviry/by-sid/4615361/podminky?datum=2026-10-14" | head -c 20000; echo
+          echo ZIZ; curl -s "$A/reviry/by-friendly-url/$(echo 411010)" | head -c 300; echo
