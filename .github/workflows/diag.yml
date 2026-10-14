@@ -8,10 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          if [ -f diag/r.json ]; then exit 0; fi
+          if [ -f diag/o.json ]; then exit 0; fi
           mkdir -p diag; A=https://ris.rybsvaz.cz/proxy/api/public
-          curl -s "$A/reviry/by-friendly-url/443020-jizera-10" > diag/r.json
-          curl -s "$A/reviry/by-sid/4615361/podminky?datum=2026-10-14" > diag/p.json
-          curl -s "$A/reviry/by-friendly-url/441016-jizera-10-a-sam" > diag/r2.json
+          SID=$(curl -s "$A/reviry/by-friendly-url/453088-oleska-1-p" | python3 -c "import json,sys;print(json.load(sys.stdin)['sid'])")
+          curl -s "$A/reviry/by-sid/$SID/podminky?datum=2026-10-14" > diag/o.json
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add diag; git commit -m "diag data"; git push
