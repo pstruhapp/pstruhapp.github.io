@@ -1,12 +1,17 @@
 name: diag
 on: push
+permissions:
+  contents: write
 jobs:
   d:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: |
-          A=https://ris.rybsvaz.cz/proxy/api/public
-          curl -s "$A/reviry/by-friendly-url/443020-jizera-10" > r.json; echo REVIR; cat r.json; echo
-          SID=$(python3 -c "import json;print(json.load(open('r.json')).get('sid',''))"); echo SID=$SID
-          echo PODMINKY; curl -s "$A/reviry/by-sid/4615361/podminky?datum=2026-10-14" | head -c 20000; echo
-          echo ZIZ; curl -s "$A/reviry/by-friendly-url/$(echo 411010)" | head -c 300; echo
+          if [ -f diag/r.json ]; then exit 0; fi
+          mkdir -p diag; A=https://ris.rybsvaz.cz/proxy/api/public
+          curl -s "$A/reviry/by-friendly-url/443020-jizera-10" > diag/r.json
+          curl -s "$A/reviry/by-sid/4615361/podminky?datum=2026-10-14" > diag/p.json
+          curl -s "$A/reviry/by-friendly-url/441016-jizera-10-a-sam" > diag/r2.json
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add diag; git commit -m "diag data"; git push
