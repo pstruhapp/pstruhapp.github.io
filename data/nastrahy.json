@@ -1,5 +1,5 @@
 {
-  "aktualizovano": "2026-10-12",
+  "aktualizovano": "2026-11-01",
   "pozn": "Katalog typů nástrah pro rady „Nástrahy dnes“. Odkazy vedou na kategorie obchodů (ne na konkrétní kusy). Kontroluje se jednou měsíčně.",
   "typy": {
     "ceska": {
@@ -155,7 +155,7 @@
     "rot_v": {
       "n": "Rotačka větší",
       "k": "privlac",
-      "vel": "č. 2–3, 5–8 g",
+      "vel": "č. 2–3, 4–8 g (podle výrobce)",
       "odkazy": [
         {
           "o": "Moje přívlač – Mepps",
