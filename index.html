@@ -1334,32 +1334,34 @@ function naCtx(w,fl,p){
   const sero=noc||(sr!=null&&(Math.abs(nm-ss)<=60||Math.abs(nm-sr)<=60));
   const vecer=ss!=null&&nm>=ss-180&&nm<=ss+30;
   const sky=pr>0.3?"prsi":cl<30?"jasno":cl>70?"zatazeno":"polojasno";
-  const q=fl&&fl.qa>0?fl.q/fl.qa:null, up=fl?.trend==="stoupa";
-  const voda=q==null?"?":q<0.6?"nizka":q<1.3?"bezna":q<2?"zvysena":"vysoka";
+  // stojatá voda (nádrž, rybník, „vodní plocha“): průtok nehraje roli
+  const stoj=!!p&&((!(+p.delka>0)&&+p.rozloha>0)||/nádrž|rybník|jezer|pískovn|vodní ploch/i.test(p.n||"")||/^\s*Odlov lze provozovat na vodní ploše/i.test(p.popis||""));
+  const q=!stoj&&fl&&fl.qa>0?fl.q/fl.qa:null, up=!stoj&&fl?.trend==="stoupa";
+  const voda=stoj?"bezna":q==null?"?":q<0.6?"nizka":q<1.3?"bezna":q<2?"zvysena":"vysoka";
   let cir="cira"; if((q!=null&&q>1.6)||(up&&q!=null&&q>1.1)||rain24>8) cir="kalna"; else if((q!=null&&q>1.2)||up||rain24>3) cir="mirne";
   const tech=p?.technika||[], ok=co=>{ const t=tech.find(t=>norm(t.co)===norm(co)); return !t||!t.zakaz||techCast(t); };
-  return {mon,nm,sr,ss,sea,noc,sero,vecer,sky,cl,q,up,voda,cir,wt,rain24,fly:ok("Muškaření"),spin:ok("Přívlač")};
+  return {mon,nm,sr,ss,sea,noc,sero,vecer,sky,cl,q,up,voda,cir,wt,rain24,stoj,fly:ok("Muškaření"),spin:ok("Přívlač")};
 }
 const naSpinCol=c=>c.cir==="kalna"?["or"]:c.sero?["zl"]:c.cir==="mirne"?["zl"]:c.sky==="jasno"?["st"]:c.sky==="zatazeno"||c.sky==="prsi"?["mi"]:["st"];
 const naSpinWhy=c=>c.cir==="kalna"?" V kalné vodě je vidět hlavně výrazná oranžová nebo fluo barva.":c.sero?" Zlatá se v šeru leskne víc než stříbrná.":c.cir==="mirne"?" V mírně zakalené vodě je zlatá vidět lépe než stříbrná.":c.sky==="jasno"?" Za jasného dne se stříbrná třpytí jako malá rybka.":c.sky==="zatazeno"||c.sky==="prsi"?" Za zataženého počasí působí měděná přirozeně a je dobře vidět.":"";
 const NA_L=[
- {id:"ceska",y:c=>c.voda==="nizka"&&c.cir==="cira"?"v malé a lehké verzi funguje i v nízké čiré vodě":c.cir!=="cira"?"těžší verze se dostane ke dnu i v zakalené vodě":"spolehlivá volba do běžného proudu",m:"fly",sn:"Česká",kde:"U dna v proudu",
+ {id:"ceska",w:"tek",y:c=>c.voda==="nizka"&&c.cir==="cira"?"v malé a lehké verzi funguje i v nízké čiré vodě":c.cir!=="cira"?"těžší verze se dostane ke dnu i v zakalené vodě":"spolehlivá volba do běžného proudu",m:"fly",sn:"Česká",kde:"U dna v proudu",
   s:c=>50+(c.voda==="bezna"||c.voda==="zvysena"?12:0)+(c.cir!=="cira"?10:0)+(c.sea==="podzim"||c.sea==="jaro"?5:0),
   sz:c=>c.voda==="nizka"||(c.cir==="cira"&&c.voda!=="zvysena"&&c.voda!=="vysoka")?"malá a lehká – háček 14–16, slabá zátěž nebo hlavička 2,5 mm":c.voda==="zvysena"||c.voda==="vysoka"||c.cir==="kalna"?"větší a těžší – háček 10–12, hlavička 3–3,5 mm":"střední – háček 12–14, zátěž podle hloubky",
   col:c=>c.cir==="kalna"?["ce","rz"]:(c.sero||c.sea==="podzim")?["ol","or"]:["ol","hn"],
   jak:"Krátké nahození šikmo proti proudu, nymfa má jít těsně nade dnem. Veď ji špičkou prutu stejně rychle, jako teče voda. Velikost a zátěž přizpůsob hloubce a proudu – v mělké a pomalé vodě lehčí, v hlubokém proudu těžší.",
   proc:c=>"Napodobuje larvy chrostíků a blešivce, kterých je na dně celý rok nejvíc. Váže se v mnoha velikostech, od drobných po těžké."+(c.cir==="kalna"?" V kalné vodě zvol tmavou s výraznou hlavičkou – ryba uvidí siluetu.":c.sero?" Oranžový bod v šeru upoutá.":" V čiré vodě drž přírodní barvy.")},
- {id:"perdigon",y:c=>c.cir==="kalna"?"v kalné vodě je málo vidět":c.cir==="cira"&&(c.voda==="nizka"||c.voda==="bezna")?"štíhlá a nenápadná – ideální do nízké čiré vody":"rychle klesne ke dnu i v proudu",m:"fly",sn:"Perdigon",kde:"U dna v proudu",
+ {id:"perdigon",w:"tek",y:c=>c.cir==="kalna"?"v kalné vodě je málo vidět":c.cir==="cira"&&(c.voda==="nizka"||c.voda==="bezna")?"štíhlá a nenápadná – ideální do nízké čiré vody":"rychle klesne ke dnu i v proudu",m:"fly",sn:"Perdigon",kde:"U dna v proudu",
   s:c=>45+(c.cir==="cira"&&(c.voda==="nizka"||c.voda==="bezna")?18:0)-(c.cir==="kalna"?15:0)-(c.voda==="vysoka"?5:0),
   col:c=>c.sero?["ol","or"]:["ol","st"],
   jak:"Lov na krátko nebo francouzskou nymfou s napnutým vlascem, sleduj indikátor.",
   proc:c=>"Štíhlá a hladká, klesne rychle ke dnu i v proudu."+(c.cir==="cira"?" V čiré a nízké vodě nevypadá podezřele.":"")},
- {id:"jig",y:c=>c.cir!=="cira"?"barevná hlavička je vidět i v zakalené vodě":c.sea==="podzim"?"na podzim ryby dráždí barevný bod":"nezachytává se o kameny",m:"fly",sn:"Jig nymfa",kde:"U dna v proudu",
+ {id:"jig",w:"tek",y:c=>c.cir!=="cira"?"barevná hlavička je vidět i v zakalené vodě":c.sea==="podzim"?"na podzim ryby dráždí barevný bod":"nezachytává se o kameny",m:"fly",sn:"Jig nymfa",kde:"U dna v proudu",
   s:c=>48+(c.cir!=="cira"?12:0)+(c.sea==="podzim"?6:0)+(c.sero?4:0),
   col:c=>c.cir==="kalna"?["ce","rz"]:["hn","or"],
   jak:"Nech ji projít po dně, při záběru stačí krátké přiseknutí.",
   proc:c=>"Hrot je nahoře, takže se méně zachytává o kameny. Barevná hlavička ryby dráždí"+(c.sea==="podzim"?" – na podzim to funguje zvlášť dobře.":".")},
- {id:"posvatka",y:c=>c.voda==="zvysena"||c.voda==="vysoka"?"při vyšší vodě proud larvy strhává":c.sea==="jaro"?"na jaře jsou larvy pošvatek velké a aktivní":"při nízké a běžné vodě je zbytečně těžká",m:"fly",sn:"Pošvatka",kde:"Hluboký proud",
+ {id:"posvatka",w:"tek",y:c=>c.voda==="zvysena"||c.voda==="vysoka"?"při vyšší vodě proud larvy strhává":c.sea==="jaro"?"na jaře jsou larvy pošvatek velké a aktivní":"při nízké a běžné vodě je zbytečně těžká",m:"fly",sn:"Pošvatka",kde:"Hluboký proud",
   s:c=>30+(c.voda==="zvysena"||c.voda==="vysoka"?15:0)+(c.cir==="kalna"?10:0)+(c.sea==="jaro"?10:0),
   col:()=>["ce","hn"],
   jak:"Těžká nymfa na hluboké proudnice a pod peřeje, nech ji jít přímo po dně.",
@@ -1384,17 +1386,29 @@ const NA_L=[
   col:()=>["ce","sv"],
   jak:"Nahazuj těsně ke břehu a pod stromy, muška má plácnout o hladinu.",
   proc:()=>"V létě padají mravenci a brouci z trávy do vody a ryby na ně čekají pod břehem."},
- {id:"streamer",y:c=>c.sero?"za šera loví větší pstruzi malé rybky":c.cir!=="cira"?"v zakalené vodě berou ryby větší sousto":c.sky==="jasno"?"za jasného dne jsou ryby opatrné":"na větší pstruhy v tůních",m:"fly",sn:"Streamer",kde:"Tůň a hluboká voda",
+ {id:"streamer",kdeS:"Hlubší voda a u dna",y:c=>c.sero?"za šera loví větší pstruzi malé rybky":c.cir!=="cira"?"v zakalené vodě berou ryby větší sousto":c.sky==="jasno"?"za jasného dne jsou ryby opatrné":"na větší pstruhy v tůních",m:"fly",sn:"Streamer",kde:"Tůň a hluboká voda",
   s:c=>30+(c.sero?20:0)+(c.cir!=="cira"||c.voda==="zvysena"?15:0)+(c.sea==="podzim"?10:0)-(c.sky==="jasno"&&!c.sero?10:0),
   col:c=>c.cir==="kalna"?["ce","or"]:c.sero?["ce","ol"]:["ol","hn"],
   jak:"Nahoď přes tůň, nech klesnout a stahuj krátkými trhnutími.",
   proc:c=>"Větší pstruzi loví malé rybky (vranky, střevle)"+(c.sero?" – nejvíc za šera.":c.cir!=="cira"?" – v zakalené vodě berou větší sousto.":".")},
- {id:"rot_m",y:c=>c.cir==="kalna"?"v kalné vodě je malá rotačka málo vidět":c.cir==="cira"&&c.voda==="nizka"?"malá nástraha nepoleká rybu v nízké čiré vodě":"univerzální volba do proudu",m:"spin",sn:"Rotačka 0–1",kde:"U dna v proudu",
+ {id:"lur",w:"stoj",y:c=>c.cir!=="cira"?"výrazný lur je vidět i v zakalené vodě":c.sero?"za šera ryby honí větší sousto":c.sea==="podzim"||c.sea==="zima"||c.sea==="jaro"?"ve studenější vodě a na čerstvě vysazené duháky fungují lury nejlépe":"na aktivní hledání ryb v nádrži",m:"fly",sn:"Lur",kde:"Volná voda v nádrži",
+  s:c=>55+(c.sea==="podzim"||c.sea==="zima"||c.sea==="jaro"?12:0)+(c.sero?6:0)+(c.cir!=="cira"?6:0)-(c.sea==="leto"&&!c.sero?8:0),
+  sz:c=>c.cir==="cira"&&!c.sero?"mini-lur – háček 10–12, střídmé barvy":"lur – háček 8–10, s marabu ocáskem",
+  col:c=>c.cir==="kalna"||c.sero?["ce","or"]:c.sky==="jasno"?["ol","sv"]:["sv","or"],
+  jak:"Nahoď daleko, nech lur klesnout (počítej vteřiny, ať zkusíš různé hloubky) a stahuj trhaně – krátké i delší tahy, občas pauza. Když najdeš hloubku, kde ryby berou, drž se jí.",
+  proc:c=>"Lury a mini-lury (např. vzory Cats Whisker, Viva, Cormorant nebo Dawson's Olive) jsou základ lovu na stojaté vodě: marabu se ve vodě vlní a dráždí ryby k útoku. Čerstvě vysazení duháci na ně reagují zvlášť ochotně."+(c.cir!=="cira"?" Do zakalené vody vol černou s oranžovou nebo světlý kontrastní vzor.":c.sky==="jasno"&&!c.sero?" Za jasného dne raději menší a tlumenější barvy.":"")},
+ {id:"buzzer",w:"stoj",y:c=>c.wt!=null&&c.wt<6?"ve studené vodě se pakomáři líhnou málo":c.sea==="jaro"||c.sea==="cerven"||c.sea==="leto"?"pakomáři se na nádržích líhnou skoro denně":"pomalá nástraha, když ryby nic nehoní",m:"fly",sn:"Buzzer",kde:"Pod hladinou na klidné vodě",
+  s:c=>35+(c.sea==="jaro"||c.sea==="cerven"||c.sea==="leto"?18:0)+(c.sky==="zatazeno"?5:0)+(c.cir==="cira"?5:0)-(c.wt!=null&&c.wt<6?10:0),
+  sz:()=>"háček 12–16, štíhlé tělo",
+  col:c=>c.cir==="kalna"?["ce","rz"]:["ce","ol"],
+  jak:"Na dlouhém návazci pod indikátorem, nebo jen velmi pomalu stahuj. Nech ho viset v hloubce, kde se ryby drží.",
+  proc:()=>"Napodobuje kuklu pakomára, kterou ryby na stojaté vodě sbírají nejčastěji. Lov je pomalý a jemný."},
+ {id:"rot_m",kdeS:"Volná voda",y:c=>c.cir==="kalna"?"v kalné vodě je malá rotačka málo vidět":c.cir==="cira"&&c.voda==="nizka"?"malá nástraha nepoleká rybu v nízké čiré vodě":"univerzální volba do proudu",m:"spin",sn:"Rotačka 0–1",kde:"U dna v proudu",
   s:c=>52+(c.cir==="cira"&&c.voda==="nizka"?15:0)+(c.cir==="cira"&&c.voda==="bezna"?8:0)-(c.cir==="kalna"?15:0)-(c.voda==="vysoka"?10:0),
   col:naSpinCol,
   jak:"Nahazuj šikmo proti proudu a navíjej jen tak rychle, aby se lístek točil. Má jít těsně nad dnem.",
   proc:c=>"Malý lístek nepoleká rybu v čiré a nízké vodě."+naSpinWhy(c)},
- {id:"rot_v",y:c=>c.voda==="nizka"?"na nízkou vodu je moc velká a hlučná":c.cir!=="cira"||c.voda==="zvysena"?"víc vibruje – ryba ji najde i v zakalené vodě":"do silnějšího proudu",m:"spin",sn:"Rotačka 2–3",kde:"Silnější proud",
+ {id:"rot_v",w:"tek",y:c=>c.voda==="nizka"?"na nízkou vodu je moc velká a hlučná":c.cir!=="cira"||c.voda==="zvysena"?"víc vibruje – ryba ji najde i v zakalené vodě":"do silnějšího proudu",m:"spin",sn:"Rotačka 2–3",kde:"Silnější proud",
   s:c=>35+(c.voda==="zvysena"||c.voda==="vysoka"?20:0)+(c.cir!=="cira"?15:0)-(c.voda==="nizka"?20:0),
   col:c=>c.cir==="kalna"?["or","zl"]:["zl"],
   jak:"V proudu veď pomaleji, nech ji jít u dna, kde se ryby schovávají.",
@@ -1422,12 +1436,12 @@ function naWhy(c){
   const vt={nizka:"nízká",bezna:"běžná",zvysena:"zvýšená",vysoka:"vysoká"}[c.voda];
   const ct={cira:"spíš čirá",mirne:"asi mírně zakalená",kalna:"kalná"}[c.cir];
   const parts=[];
-  parts.push(c.q!=null?`Voda je ${vt} (${Math.round(c.q*100)} % běžného průtoku)${c.up?" a stoupá":""}, ${ct}.`:`Průtok na této řece neznáme – voda je ${ct}${c.rain24>3?" (v posledních dnech pršelo)":""}.`);
+  parts.push(c.stoj?`Stojatá voda (nádrž nebo rybník) – průtok tu nehraje roli, voda je ${ct}${c.rain24>3?" (v posledních dnech pršelo)":""}.`:c.q!=null?`Voda je ${vt} (${Math.round(c.q*100)} % běžného průtoku)${c.up?" a stoupá":""}, ${ct}.`:`Průtok na této řece neznáme – voda je ${ct}${c.rain24>3?" (v posledních dnech pršelo)":""}.`);
   const sky={jasno:"jasno",polojasno:"polojasno",zatazeno:"zataženo",prsi:"prší"}[c.sky];
   parts.push(c.noc?"Je noc – rada platí pro zítřejší ráno.":c.sero?`Je šero, ${sky}.`:`${c.vecer?"Odpoledne":"Den"}, ${sky}.`);
   parts.push({jaro:"Jaro – ryby jsou po zimě hladové.",cerven:"Začátek léta – hlavní líhnutí hmyzu.",leto:"Léto – v poledne ryby zalézají, berou ráno a večer.",podzim:"Podzim – ryby se vykrmují před zimou.",zima:"Zima."}[c.sea]+(c.wt!=null?` Voda asi ${c.wt} °C.`:""));
   const pos=[],neg=[];
-  if(c.sero) pos.push("šero"); if(c.sky==="zatazeno") pos.push("zataženo"); if(c.sea==="podzim"||c.sea==="jaro") pos.push(c.sea); if(c.up&&c.cir!=="kalna") pos.push("stoupající voda přináší potravu"); if(c.voda==="bezna") pos.push("běžný průtok");
+  if(c.sero) pos.push("šero"); if(c.sky==="zatazeno") pos.push("zataženo"); if(c.sea==="podzim"||c.sea==="jaro") pos.push(c.sea); if(c.up&&c.cir!=="kalna") pos.push("stoupající voda přináší potravu"); if(c.voda==="bezna"&&!c.stoj) pos.push("běžný průtok");
   if(c.voda==="nizka"&&c.cir==="cira") neg.push("nízká čirá voda – ryby jsou plaché"); if(c.cir==="kalna") neg.push("kalná voda"); if(c.voda==="vysoka") neg.push("vysoká voda"); if(c.wt!=null&&c.wt<5) neg.push("studená voda"); if(c.sky==="jasno"&&!c.sero) neg.push("ostré slunce");
   return {txt:parts.join(" "),pos,neg};
 }
@@ -1445,7 +1459,7 @@ function naRose(list){ const best=list[0];
     `<svg viewBox="0 0 120 64" aria-hidden="true" style="width:72px;height:38px"><path d="M6 32 L-8 16 L-4 32 L-8 48 Z" transform="translate(14 0)" fill="${naPc(best.v)}"/><path d="M18 32 C34 8, 86 6, 112 30 C108 36, 104 40, 98 44 C78 58, 36 56, 18 32 Z" fill="${naPc(best.v)}"/><path d="M54 14 C60 4, 74 4, 80 12" fill="none" stroke="${naPc(best.v)}" stroke-width="5" stroke-linecap="round"/><circle cx="96" cy="27" r="4" fill="#fff"/></svg><div class="naname">${esc(NA_T?.typy?.[best.id]?.n||best.sn)}</div><div class="rpct" style="font-size:30px">${best.v}&nbsp;%</div><div class="rlbl" style="color:${naPc(best.v)}">hodí se dnes nejvíc</div>`); }
 function naFactors(m,c,best){
   const sky={jasno:"jasno",polojasno:"polojasno",zatazeno:"zataženo",prsi:"prší"}[c.sky];
-  const vt=(c.q==null?"":{nizka:"nízká",bezna:"běžná",zvysena:"zvýšená",vysoka:"vysoká"}[c.voda]+", ")+{cira:"čirá",mirne:"mírně kalná",kalna:"kalná"}[c.cir];
+  const vt=(c.stoj?"stojatá, ":c.q==null?"":{nizka:"nízká",bezna:"běžná",zvysena:"zvýšená",vysoka:"vysoká"}[c.voda]+", ")+{cira:"čirá",mirne:"mírně kalná",kalna:"kalná"}[c.cir];
   const st={jaro:"jaro",cerven:"začátek léta",leto:"léto",podzim:"podzim",zima:"zima"}[c.sea];
   const svet=c.sero?"šero":c.sky==="jasno"?"plné slunce":"den";
   let F;
@@ -1472,7 +1486,7 @@ function naLeg(m,ks,txt){ ks=[...new Set(ks)].filter(k=>NA_CM[m][k]);
   return `<div class="naleg"><button class="naclose" type="button" aria-label="Zavřít vysvětlení" onclick="this.parentNode.classList.add('nahid')">✕</button><button class="naopen linkbtn" type="button" onclick="this.parentNode.classList.remove('nahid')">Zobrazit vysvětlení</button><p class="hint">${txt}</p><div class="nalegl">${ks.map(k=>`<div>${naDots([k],16)}<span><b>${NA_C[k][1][0].toUpperCase()+NA_C[k][1].slice(1)}</b> – ${esc(NA_CM[m][k])}</span></div>`).join("")}</div></div>`; }
 let NA_T=null;
 function naCard(title,m,c,w){
-  const list=NA_L.filter(l=>l.m===m).map(l=>({...l,v:Math.max(5,Math.min(95,Math.round(l.s(c)))),c:l.col(c)})).sort((a,b)=>b.v-a.v);
+  const list=NA_L.filter(l=>l.m===m&&(c.stoj?l.w!=="tek":l.w!=="stoj")).map(l=>({...l,kde:(c.stoj&&l.kdeS)||l.kde,v:Math.max(5,Math.min(95,Math.round(l.s(c)))),c:l.col(c)})).sort((a,b)=>b.v-a.v);
   const top=list.slice(0,6), fh=naFactors(m,c,list[0]), fcols=naFactors.last;
   const seen=new Set(), sit=[];
   for(const l of list){ if(seen.has(l.kde)||l.v<30) continue; seen.add(l.kde); sit.push(l); if(sit.length>=3) break; }
@@ -1630,7 +1644,7 @@ loadRis().then(()=>drawRevs());
 if(!readHashLoc() && S.mode==="gps" && navigator.permissions?.query){
   navigator.permissions.query({name:"geolocation"}).then(st=>{ if(st.state==="granted") locate(true); }).catch(()=>{}); }
 /* verze aplikace – zvyšuj spolu s CACHE v sw.js */
-const APP_VER="2026-11-02 21:10";
+const APP_VER="2026-11-02 22:05";
 try{ const ft=document.getElementById("foot"); if(ft) ft.insertAdjacentHTML("beforeend",`<br><span style="font-size:11px;opacity:.7">Verze ${APP_VER}</span>`); }catch(e){}
 /* aktualizace: při návratu do aplikace zkontroluj novou verzi a po jejím převzetí stránku jednou obnov */
 if("serviceWorker" in navigator){

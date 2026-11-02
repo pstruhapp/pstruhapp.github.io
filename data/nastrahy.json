@@ -203,6 +203,18 @@
           "u": "https://www.mojeprivlac.cz/pstruh/"
         }
       ]
+    },
+    "lur": {
+      "n": "Lur / mini-lur",
+      "k": "lur",
+      "vel": "háček 8–12 (marabu ocásek, např. Cats Whisker, Viva, Cormorant)",
+      "odkazy": []
+    },
+    "buzzer": {
+      "n": "Buzzer (kukla pakomára)",
+      "k": "buzzer",
+      "vel": "háček 12–16",
+      "odkazy": []
     }
   }
 }
