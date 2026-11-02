@@ -248,7 +248,7 @@ const ZDROJ = (u) => { const h = new URL(u).hostname; return /^vcus/.test(h) ? "
   : /^jcus/.test(h) ? "ČRS Jihočeský ÚS" : /^scus/.test(h) ? "ČRS Severočeský ÚS" : /^(stcus|sus)/.test(h) ? "ČRS Středočeský ÚS" : /praha/.test(h) ? "ČRS ÚS města Prahy" : "ČRS (RIS)"; };
 function tag(t) {
   if (/vysaz|zaryb|násad/i.test(t)) return "zarybneni";
-  if (/zákaz|hájen|omezení (lovu|rybolovu|vstupu)|uzavř/i.test(t)) return "zakaz";
+  if (/zákaz|(?<![a-zá-ž])hájen|omezení (lovu|rybolovu|vstupu)|uzavř\w* (revír|nádrž|úsek|tok|vod)/i.test(t)) return "zakaz"; // „zahájeno“ není hájení
   if (/sucho|nízk\w* (stav|hladin)|úhyn|průtok/i.test(t)) return "sucho";
   if (/mušk|muškař/i.test(t)) return "muskareni";
   if (/pstruh|lipan|siven|hlavat|lososovit/i.test(t)) return "zarybneni";
@@ -256,7 +256,8 @@ function tag(t) {
 }
 async function aktuality() {
   const prev = await readJSON("aktuality.json", { polozky: [] });
-  const items = new Map(prev.polozky.map((x) => [x.url, x]));
+  // štítky starších zpráv přepočítat (oprava třídění), bez štítku vypadnou
+  const items = new Map(prev.polozky.map((x) => [x.url, { ...x, stitek: tag(x.titul + " " + (x.text || "")) }]).filter(([, x]) => x.stitek));
   for (let p = 1; p <= 5; p++) {
     const html = await get(`${RIS}/aktuality?category=&page=${p}&pageSize=9`);
     for (const c of parseCards(html, RIS)) {
