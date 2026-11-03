@@ -1,6 +1,6 @@
 {
-  "aktualizovano": "2026-11-01",
-  "pozn": "Katalog typů nástrah pro rady „Nástrahy dnes“. Odkazy vedou na kategorie obchodů (ne na konkrétní kusy). Kontroluje se jednou měsíčně.",
+  "aktualizovano": "2026-11-03",
+  "pozn": "Katalog typů nástrah pro rady „Nástrahy dnes“. Odkazy vedou na kategorie obchodů (ne na konkrétní kusy). Kontroluje se jednou měsíčně. Pole info = podrobnější popis nástrahy vlastními slovy (fakta mj. z článků CzechNymph, bez převzatých textů a fotek); kontroluje se jednou měsíčně.",
   "typy": {
     "ceska": {
       "n": "Česká nymfa",
@@ -19,7 +19,8 @@
           "o": "Tommi-Fly",
           "u": "https://www.tommi-fly.cz/nymfy"
         }
-      ]
+      ],
+      "info": "Těžká nymfa na zahnutém háčku (nejčastěji č. 10–12, na malé potoky až 16), která napodobuje blešivce a larvy chrostíků – nejběžnější potravu u dna. Obvykle se loví dvě až tři nymfy různé hmotnosti: na konci přírodní, na odbočce výraznější. Nahazuje se nakrátko proti proudu, ruka s prutem je natažená a nymfy se vedou špičkou těsně nade dnem stejně rychle jako voda; na konci proplutí je zvedni a nahoď znovu. Zátěž volíš podle hloubky a proudu – lehčí nymfa plave přirozeněji, těžší udrží kontakt. Funguje celý rok a nejvíc vyniká ve vyšší a zakalené vodě, kdy jiné způsoby selhávají. Lipani a duháci často chtějí pestřejší barvy, pstruh obecný spíš přírodní."
     },
     "perdigon": {
       "n": "Perdigon",
@@ -34,7 +35,8 @@
           "o": "Muška-vláčka",
           "u": "https://www.muska-vlacka.cz/NYMFY-c108_261_2.htm"
         }
-      ]
+      ],
+      "info": "Španělská soutěžní nymfa: štíhlé hladké tělo zalité UV pryskyřicí, bez nožiček, takže klade minimální odpor a klesne ke dnu mnohem rychleji než běžná nymfa (název znamená „brok“). Váže se drobná, typicky na háčky č. 16–18, často s tmavým bodem v hrudi, který napodobuje pochvy křídel. Nejlíp funguje v rychlém proudu, kde ryba nemá čas nástrahu zkoumat, ale chytá i v pomalejší vodě. Loví se hlavně francouzskou (dlouhou) nymfou s napnutým vlascem a indikátorem – často jen jedna muška a častější nahazování. Výhodou je, že bílé ryby, které berou výš ve vodním sloupci, ji zachytí méně než lososovité u dna."
     },
     "jig": {
       "n": "Jig nymfa s hot spotem",
@@ -49,7 +51,8 @@
           "o": "Tommi-Fly",
           "u": "https://www.tommi-fly.cz/nymfy"
         }
-      ]
+      ],
+      "info": "Nymfa na jigovém háčku, kde hrot míří nahoru – proto se méně zachytává o kameny a můžeš ji vést přímo po dně. Wolframová hlavička ji rychle dostane do hloubky a barevný „hot spot“ (oranžový, růžový, fluo) ryby dráždí; na podzim a v zakalené vodě to bývá rozhodující. Vázají se v mnoha velikostech podle hloubky a proudu. Loví se nakrátko i francouzskou nymfou, při záběru stačí krátké přiseknutí. Hodí se na pstruhy i lipany po celou sezónu."
     },
     "posvatka": {
       "n": "Nymfa pošvatky",
@@ -60,7 +63,8 @@
           "o": "Czech Nymph",
           "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/nymfy/nymfy-posvatek"
         }
-      ]
+      ],
+      "info": "Velká tmavá nymfa, která napodobuje larvu pošvatky – hmyzu z chladných, kyslíkem bohatých horských toků. Larvy žijí pod kameny v peřejích a při vyšší vodě je proud strhává, takže na ně ryby čekají v hlubokých proudnicích. Váže se větší a těžká, aby šla rovnou po dně. Nejvíc se uplatní na jaře, kdy jsou larvy velké, a po zvýšení hladiny; při nízké čiré vodě bývá zbytečně hrubá."
     },
     "jepicka": {
       "n": "Suchá jepička",
@@ -79,7 +83,8 @@
           "o": "Tommi-Fly",
           "u": "https://www.tommi-fly.cz/suche-musky"
         }
-      ]
+      ],
+      "info": "Suchá muška napodobující dospělou jepici na hladině. Na našich vodách se nejčastěji líhnou drobné jepice olivových, šedých a hnědých odstínů (např. rod Baetis) – nejsilněji na jaře a na podzim, typické velikosti háčku 16–18 i menší, s jemným návazcem kolem 0,12 mm. Když uvidíš kroužky, nahoď kousek nad rybu a nech mušku plout volně bez tahu – rozhodují velikost a silueta, ne přesná barva. Varianta „spinner“ s rozprostřenými křídly napodobuje uhynulou jepici ležící na hladině."
     },
     "chrostik": {
       "n": "Suchý chrostík",
@@ -94,7 +99,8 @@
           "o": "Muška-vláčka",
           "u": "https://www.muska-vlacka.cz/SUCHE-MUSKY-c108_241_2.htm"
         }
-      ]
+      ],
+      "info": "Suchá muška napodobující dospělého chrostíka se střechovitými křídly. Chrostíci létají hlavně v létě za soumraku a ryby na ně berou prudce, často s cáknutím. Nahazuj ke břehům a pod převislé větve; na rozdíl od jepice můžeš mušku lehce pocukávat, jako by se hmyz snažil vzlétnout. V teplých letních večerech se vyplatí začít kolem šesté a lovit do tmy."
     },
     "emerger": {
       "n": "Emerger (rozenec)",
@@ -105,7 +111,8 @@
           "o": "Czech Nymph",
           "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/rozenci-podhladinove-musky"
         }
-      ]
+      ],
+      "info": "Muška napodobující hmyz ve chvíli líhnutí – tělo visí pod hladinou a křídélko (často z CDC peří) ji drží v povrchové blance. Ryby se při líhnutí často zaměří právě na tuto bezbrannou fázi a suchou mušku ignorují. Vyber velikost a siluetu podle líhnoucího se hmyzu a nech ji plout zcela přirozeně, šňůra ji nesmí táhnout. Je to jemná technika, která chce přesný nához a dobrý zrak."
     },
     "terest": {
       "n": "Mravenec / brouček",
@@ -116,7 +123,8 @@
           "o": "Czech Nymph",
           "u": "https://www.czechnymph.cz/cz/e-shop/umele-musky/suchozemsky-hmyz"
         }
-      ]
+      ],
+      "info": "Napodobenina suchozemského hmyzu (mravenec, brouček, kobylka), který spadne do vody. Nejvíc se uplatní v létě, kdy hmyz padá z trávy a stromů; ryby pod břehem na něj čekají, i když zrovna aktivně nežerou. Pěnové vzory plavou spolehlivě a při dopadu plácnou o hladinu, což ryby láká; barevný indikátor na hřbetě pomůže, když je šero. Nahazuj těsně ke břehu a pod stromy."
     },
     "streamer": {
       "n": "Streamer",
@@ -135,7 +143,8 @@
           "o": "Tommi-Fly",
           "u": "https://www.tommi-fly.cz/streamery"
         }
-      ]
+      ],
+      "info": "Velká muška, která napodobuje rybku (vranku, střevli), pulce nebo jiného plovoucího živočicha a provokuje dravé ryby pohybem. Na pstruhy se nahazuje napříč nebo šikmo po proudu, nechá se obloukem proplout a pak se stahuje proměnlivou rychlostí – krátkými i dlouhými tahy, občas s pauzou. Větší pstruzi na něj berou hlavně za šera a po vydatném dešti, kdy je voda vyšší a zakalená. Barvy se střídají podle vody: v čiré přírodní olivová a hnědá, v kalné černá nebo kontrastní. Návazec volíš pevnější, protože záběry bývají tvrdé."
     },
     "rot_m": {
       "n": "Rotačka malá",
@@ -150,7 +159,8 @@
           "o": "Moje přívlač – Blue Fox",
           "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/"
         }
-      ]
+      ],
+      "info": "Malá rotačka (velikost lístku 0–1) je univerzální nástraha na pstruhy v potocích a menších řekách. Nahazuj šikmo proti proudu a navíjej jen tak rychle, aby se lístek točil a nástraha šla těsně nade dnem. V čiré nízké vodě rybu nepoleká, za jasna se třpytí stříbrná, za šera a v mírně zakalené vodě je lépe vidět zlatá nebo měděná. Pozor na Rybářský řád: v pstruhovém revíru smí mít nástraha od 1. 9. do 30. 11. jen jeden jednoháček, trojháček je tedy potřeba vyměnit."
     },
     "rot_v": {
       "n": "Rotačka větší",
@@ -165,7 +175,8 @@
           "o": "Moje přívlač – Blue Fox",
           "u": "https://www.mojeprivlac.cz/blue-fox-rotacni-trpytky/"
         }
-      ]
+      ],
+      "info": "Větší rotačka (lístek 2–3) víc vibruje a ryba ji vycítí postranní čárou i v zakalené nebo vyšší vodě. Hodí se do silnějšího proudu a na větší řeky; veď ji pomaleji u dna, kde se ryby schovávají. Na malou čirou vodu bývá zbytečně hlučná. I zde platí, že od 1. 9. do 30. 11. smí mít nástraha v pstruhovém revíru jen jeden jednoháček."
     },
     "plandavka": {
       "n": "Plandavka",
@@ -180,7 +191,8 @@
           "o": "Moje přívlač – Rapala",
           "u": "https://www.mojeprivlac.cz/rapala-plandavky/"
         }
-      ]
+      ],
+      "info": "Plandavka (třpytka plandavka) dolétne daleko a rychle se dostane do hloubky, proto se hodí do tůní, hlubších úseků a na nádrže. Nahoď, nech klesnout a veď pomalu s občasným přizvednutím – ryba často zaútočí, když nástraha znovu padá. V plném světle se třpytí jako rybka, v kalné vodě volí zlatou nebo výraznou barvu. Na podzim v pstruhovém revíru nezapomeň na jeden jednoháček."
     },
     "wobler": {
       "n": "Wobler",
@@ -191,7 +203,8 @@
           "o": "Moje přívlač",
           "u": "https://www.mojeprivlac.cz/woblery-na-pstruhy/"
         }
-      ]
+      ],
+      "info": "Malý wobler (typicky 3–6 cm) věrně napodobuje rybku – vranku nebo mřenku, které se drží u dna a kořenů. Veď ho podél břehu proti proudu nebo napříč a občas zastav: v pauze bývá nejvíc útoků, hlavně za šera a na podzim, kdy pstruzi loví víc. V čiré vodě vol přírodní barvy, v zakalené kontrastní a woblery s chrastítkem. Trojháčky je potřeba od 1. 9. do 30. 11. nahradit jedním jednoháčkem."
     },
     "guma": {
       "n": "Gumová nástraha na jigu",
@@ -202,19 +215,22 @@
           "o": "Moje přívlač",
           "u": "https://www.mojeprivlac.cz/pstruh/"
         }
-      ]
+      ],
+      "info": "Měkká nástraha (malá rybka, twister, larva nebo červík) na jigové hlavičce či wolframové kuličce. Dá se vést velmi pomalu poskakováním po dně, proto se hodí do studené vody, kdy ryby nechtějí nic honit, a do hlubších míst. Hmotnost hlavičky volíš podle hloubky a proudu tak, aby nástraha dosáhla dna, ale nezachytávala se. V pstruhovém revíru drž počet háčků podle Rybářského řádu."
     },
     "lur": {
       "n": "Lur / mini-lur",
       "k": "lur",
       "vel": "háček 8–12 (marabu ocásek, např. Cats Whisker, Viva, Cormorant)",
-      "odkazy": []
+      "odkazy": [],
+      "info": "Lury a mini-lury jsou základní nástrahy pro lov pstruhů na stojatých vodách (nádrže, pstruhové rybníky). Pohyblivý ocásek z marabu se při stahování vlní a dráždí ryby k útoku; čerstvě vysazení duháci na ně reagují zvlášť ochotně. Mezi osvědčené vzory patří např. Cats Whisker, Viva, Montana, Woolly Bugger, Cormorant nebo Dawson's Olive; oblíbené jsou kombinace černé s oranžovou, olivové a světlé. Nahoď daleko, nech klesnout (počítej vteřiny a zkoušej různé hloubky) a stahuj trhaně – dlouhé rychlé tahy, nebo krátké s pauzou, kdy často přijde záběr. Podle hloubky volíš plovoucí, intermediální nebo potápivou šňůru; přiseká se stažením šňůry, ne zvednutím prutu."
     },
     "buzzer": {
       "n": "Buzzer (kukla pakomára)",
       "k": "buzzer",
       "vel": "háček 12–16",
-      "odkazy": []
+      "odkazy": [],
+      "info": "Štíhlá nymfa napodobující kuklu pakomára. Pakomáři se na nádržích líhnou skoro celý rok a jsou pro pstruhy i lipany stálou potravou. Loví se pomalu – na plovoucí šňůře s dlouhým jemným návazcem, často pod indikátorem nebo jen s velmi pomalým stahováním (např. „osmičkou“), aby nymfa visela v hloubce, kde se ryby drží. Záběry bývají prudké, takže příliš slabý návazec může prasknout. Hodí se i v kombinaci s mokrou muškou nebo mini-lurem na odbočce."
     }
   }
 }

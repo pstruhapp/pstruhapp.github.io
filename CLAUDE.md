@@ -27,7 +27,7 @@ Tento soubor čte Claude (AI asistent), když v tomto repozitáři dělá úprav
 - `index.html` – celá aplikace v jednom souboru (HTML, CSS, JS). Mapa Leaflet, QR knihovna z cdnjs.
 - `sw.js` – service worker (network-first). **Po každé změně `index.html` zvyš číslo v `const CACHE = "pstruh-vNN"`**, jinak se v telefonech drží stará verze.
 - `data/` – data obnovovaná každé ráno (neupravuj ručně, přepíše je robot), kromě:
-  - `nastrahy.json` – katalog nástrah (kontroluje měsíční úloha),
+  - `nastrahy.json` – katalog nástrah; pole `info` = podrobný popis nástrahy vlastními slovy (zobrazí se pod „Víc o nástraze“), kontroluje měsíční úloha,
   - `povolenky-rucne.json` – ruční upozornění na povolenky (klíč = číslo revíru, `txt`, `overeno`),
   - `rad.json` – text Rybářského řádu (mění se jen z nového PDF),
   - `ryby.json`, `ryby/` – atlas ryb.
