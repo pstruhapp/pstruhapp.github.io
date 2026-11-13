@@ -8,8 +8,8 @@
   "sus": "ok",
   "usti": "ok"
  },
- "datum": "2026-11-12",
- "zjisteno": "2026-11-12T11:49:58.764Z",
+ "datum": "2026-11-13",
+ "zjisteno": "2026-11-13T11:32:01.338Z",
  "ok": true,
  "problemy": [],
  "info": [
@@ -173,7 +173,7 @@
    ]
   },
   {
-   "t": "Aktuality: 15 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
+   "t": "Aktuality: 14 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
    "x": [
     "2026-11-05 Podvodní svět přiblížil školákům ichtyolog ČRS Pavel Vrána",
     "2026-11-01 Bushman pro ČRS: celý listopad 40 % sleva pro všechny naše rybáře",
@@ -188,8 +188,7 @@
     "2026-10-09 Říjnové vydání časopisu Rybářství",
     "2026-10-08 Český úspěch na mezinárodních přívlačových závodech v Severní Makedonii",
     "2026-10-05 Zemřel Jiří Kříž, legenda rybolovné techniky",
-    "2026-10-01 Finále Českého poháru v rybolovné technice 2026 zná své vítěze",
-    "2026-09-29 Akce „Poznej svého farmáře“ se uskutečnila ve Vodňanech"
+    "2026-10-01 Finále Českého poháru v rybolovné technice 2026 zná své vítěze"
    ]
   },
   {
