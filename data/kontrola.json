@@ -8,8 +8,8 @@
   "sus": "ok",
   "usti": "ok"
  },
- "datum": "2026-11-16",
- "zjisteno": "2026-11-16T12:02:51.902Z",
+ "datum": "2026-11-17",
+ "zjisteno": "2026-11-17T12:27:51.149Z",
  "ok": true,
  "problemy": [],
  "info": [
@@ -172,8 +172,9 @@
    ]
   },
   {
-   "t": "Aktuality: 14 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
+   "t": "Aktuality: 15 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
    "x": [
+    "2026-11-16 Zástupci ČRS se zúčastnili XV. sněmu Slovenského rybárskeho zväzu",
     "2026-11-13 Český rybářský svaz se zúčastní rybářského festivalu v polských Kielcích",
     "2026-11-05 Podvodní svět přiblížil školákům ichtyolog ČRS Pavel Vrána",
     "2026-11-01 Bushman pro ČRS: celý listopad 40 % sleva pro všechny naše rybáře",
