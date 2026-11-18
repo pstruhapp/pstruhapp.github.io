@@ -1,6 +1,6 @@
 {
  "zarybKroky": {
-  "praha": 470,
+  "praha": 480,
   "jihocesky": 1585,
   "boskovice": 35,
   "hodonin": 6,
@@ -8,8 +8,8 @@
   "sus": "ok",
   "usti": "ok"
  },
- "datum": "2026-11-17",
- "zjisteno": "2026-11-17T12:27:51.149Z",
+ "datum": "2026-11-18",
+ "zjisteno": "2026-11-18T12:14:50.271Z",
  "ok": true,
  "problemy": [],
  "info": [
