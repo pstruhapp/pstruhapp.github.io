@@ -8,8 +8,8 @@
   "sus": "ok",
   "usti": "ok"
  },
- "datum": "2026-11-18",
- "zjisteno": "2026-11-18T12:14:50.271Z",
+ "datum": "2026-11-19",
+ "zjisteno": "2026-11-19T12:07:46.801Z",
  "ok": true,
  "problemy": [],
  "info": [
@@ -172,7 +172,7 @@
    ]
   },
   {
-   "t": "Aktuality: 15 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
+   "t": "Aktuality: 14 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
    "x": [
     "2026-11-16 Zástupci ČRS se zúčastnili XV. sněmu Slovenského rybárskeho zväzu",
     "2026-11-13 Český rybářský svaz se zúčastní rybářského festivalu v polských Kielcích",
@@ -187,8 +187,7 @@
     "2026-10-14 Mistrovské úspěchy našich závodníků v rybolovné technice",
     "2026-10-09 Hrádek jachtařské závody",
     "2026-10-09 Říjnové vydání časopisu Rybářství",
-    "2026-10-08 Český úspěch na mezinárodních přívlačových závodech v Severní Makedonii",
-    "2026-10-05 Zemřel Jiří Kříž, legenda rybolovné techniky"
+    "2026-10-08 Český úspěch na mezinárodních přívlačových závodech v Severní Makedonii"
    ]
   },
   {
