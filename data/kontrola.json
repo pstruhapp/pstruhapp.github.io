@@ -8,8 +8,8 @@
   "sus": "ok",
   "usti": "ok"
  },
- "datum": "2026-11-26",
- "zjisteno": "2026-11-26T13:07:47.276Z",
+ "datum": "2026-11-27",
+ "zjisteno": "2026-11-27T13:06:54.374Z",
  "ok": true,
  "problemy": [],
  "info": [
@@ -172,8 +172,10 @@
    ]
   },
   {
-   "t": "Aktuality: 13 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
+   "t": "Aktuality: 14 zpráv z RIS se do aplikace nedostalo (žádný štítek) – zkontrolovat, jestli nebylo něco důležitého",
    "x": [
+    "2026-11-27 Zasedal sportovní odbor lovu ryb udicí - plavaná",
+    "2026-11-26 Proběhlo podzimní zasedání odboru rybolovné techniky",
     "2026-11-26 Olovo v rybářském náčiní: EU zavádí postupná omezení. Co to znamená pro rybáře?",
     "2026-11-16 Zástupci ČRS se zúčastnili XV. sněmu Slovenského rybárskeho zväzu",
     "2026-11-13 Český rybářský svaz se zúčastní rybářského festivalu v polských Kielcích",
@@ -185,8 +187,7 @@
     "2026-10-19 Dvojnásobný medailový úspěch na mistrovství světa v přívlači z lodí",
     "2026-10-16 Ze zasedání Západočeského územního svazu (říjen 2026)",
     "2026-10-15 Zástupci ČRS jednali s ministrem životního prostředí o malých vodních elektrárnách",
-    "2026-10-14 Mistrovské úspěchy našich závodníků v rybolovné technice",
-    "2026-10-09 Hrádek jachtařské závody"
+    "2026-10-14 Mistrovské úspěchy našich závodníků v rybolovné technice"
    ]
   },
   {
